@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CityCare Hospital</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background: linear-gradient(to right, #007bff, #0056b3);
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .navbar-brand:hover,
+    .nav-link:hover {
+      color: #0056b3 !important;
+    }
+
+    .doctor-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .doctor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background: #333;
+    }
+
+    iframe {
+      border: 2px solid #007bff;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="text-white text-center py-4">
+    <h1>CityCare Hospital</h1>
+    <p>Compassion. Innovation. Trust.</p>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">CityCare</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
+          <li class="nav-item"><a class="nav-link" href="#appointment">Appointments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+
+    <!-- Welcome -->
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2>Welcome to CityCare Hospital</h2>
+      <p class="lead">Your health is our top priority. Book an appointment or reach out to our team today.</p>
+    </div>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="mb-5">
+      <h3 class="mb-4 text-center" data-aos="fade-right">Meet Our Specialists</h3>
+
+      <!-- Filter -->
+      <div class="mb-4 text-center">
+        <select class="form-select w-auto d-inline-block" id="departmentFilter">
+          <option value="all">All Departments</option>
+          <option value="cardiology">Cardiology</option>
+          <option value="orthopedics">Orthopedics</option>
+          <option value="pediatrics">Pediatrics</option>
+        </select>
+      </div>
+
+      <div class="row g-4" id="doctorCards">
+        <!-- Doctor 1 -->
+        <div class="col-md-4 doctor-item" data-department="cardiology" data-aos="fade-up">
+          <div class="card doctor-card h-100">
+            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Dr. Alice Smith">
+            <div class="card-body text-center">
+              <h5 class="card-title">Dr. Alice Smith</h5>
+              <p>Cardiologist</p>
+              <div class="mb-2 text-warning">★ ★ ★ ★ ☆</div>
+              <p class="small text-muted">“Very knowledgeable and caring.”</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAlice">View Profile</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="col-md-4 doctor-item" data-department="orthopedics" data-aos="fade-up" data-aos-delay="100">
+          <div class="card doctor-card h-100">
+            <img src="https://images.unsplash.com/photo-1603398938378-72ec3c752f86?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Dr. Brian Jones">
+            <div class="card-body text-center">
+              <h5 class="card-title">Dr. Brian Jones</h5>
+              <p>Orthopedic Surgeon</p>
+              <div class="mb-2 text-warning">★ ★ ★ ★ ★</div>
+              <p class="small text-muted">“Helped me walk pain-free again.”</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBrian">View Profile</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="col-md-4 doctor-item" data-department="pediatrics" data-aos="fade-up" data-aos-delay="200">
+          <div class="card doctor-card h-100">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b9642737?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Dr. Clara Lee">
+            <div class="card-body text-center">
+              <h5 class="card-title">Dr. Clara Lee</h5>
+              <p>Pediatrician</p>
+              <div class="mb-2 text-warning">★ ★ ★ ★ ☆</div>
+              <p class="small text-muted">“My kids love her!”</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalClara">View Profile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appointment Form -->
+    <section id="appointment" class="mb-5">
+      <h3 class="mb-4" data-aos="fade-right">Book an Appointment</h3>
+      <form action="https://formspree.io/f/yourFormID" method="POST" data-aos="fade-up">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" name="name" required>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" name="email" required>
+          </div>
+          <div class="col-md-6">
+            <label for="date" class="form-label">Preferred Date</label>
+            <input type="date" class="form-control" name="date" required>
+          </div>
+          <div class="col-md-6">
+            <label for="department" class="form-label">Department</label>
+            <select class="form-select" name="department" required>
+              <option value="">Choose...</option>
+              <option>Cardiology</option>
+              <option>Orthopedics</option>
+              <option>Pediatrics</option>
+              <option>General Medicine</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+      </form>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="mb-5">
+      <h3 class="mb-4" data-aos="fade-right">Contact Us</h3>
+      <p data-aos="fade-up">📧 Email: contact@citycare.com<br>📞 Phone: +123 456 7890</p>
+      <div class="mt-3" data-aos="fade-up">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" loading="lazy"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-3">
+    <p>&copy; 2025 CityCare Hospital</p>
+  </footer>
+
+  <!-- Modals -->
+  <!-- Alice -->
+  <div class="modal fade" id="modalAlice" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Dr. Alice Smith</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Dr. Alice Smith">
+          </div>
+          <div class="col-md-8">
+            <h5>Cardiologist</h5>
+            <p>Dr. Smith has over a decade of experience treating cardiovascular diseases. She is known for her compassionate care and cutting-edge cardiac interventions.</p>
+            <p><strong>Specialties:</strong> Hypertension, Heart Failure, Preventive Cardiology</p>
+            <p><strong>Education:</strong> Harvard Medical School</p>
+            <p><strong>Availability:</strong> Mon, Wed, Fri - 9AM to 3PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brian -->
+  <div class="modal fade" id="modalBrian" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Dr. Brian Jones</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="https://images.unsplash.com/photo-1603398938378-72ec3c752f86?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Dr. Brian Jones">
+          </div>
+          <div class="col-md-8">
+            <h5>Orthopedic Surgeon</h5>
+            <p>Specializing in minimally invasive orthopedic procedures, Dr. Jones is dedicated to helping patients recover their strength and mobility.</p>
+            <p><strong>Specialties:</strong> Sports Injuries, Joint Replacements, Fractures</p>
+            <p><strong>Education:</strong> Stanford University School of Medicine</p>
+            <p><strong>Availability:</strong> Tue, Thu - 10AM to 4PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clara -->
+  <div class="modal fade" id="modalClara" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Dr. Clara Lee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b9642737?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="img-fluid rounded" alt="Dr. Clara Lee">
+          </div>
+          <div class="col-md-8">
+            <h5>Pediatrician</h5>
+            <p>With a warm personality and expert knowledge, Dr. Lee is a favorite among both children and parents. She focuses on early development, vaccinations, and long-term wellness.</p>
+            <p><strong>Specialties:</strong> Child Development, Immunizations, Acute Illnesses</p>
+            <p><strong>Education:</strong> Johns Hopkins School of Medicine</p>
+            <p><strong>Availability:</strong> Mon to Fri - 8AM to 1PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    document.getElementById("departmentFilter").addEventListener("change", function () {
+      const value = this.value;
+      const cards = document.querySelectorAll(".doctor-item");
+      cards.forEach(card => {
+        const dept = card.getAttribute("data-department");
+        card.style.display = (value === "all" || dept === value) ? "block" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
