@@ -62,7 +62,7 @@ b. Start the docker daemon using `systemctl start docker`
 c. Confirm docker daemon is runnng using `systemctl status docker`
 
 d. Create a Dockerfile
-![alt text](image.png)
+![Screenshot 2025-04-15 162823](https://github.com/user-attachments/assets/a15cb5cd-fdab-4459-be68-681dfb9fe1ce)
 
 e. Type vi Index.html to create your html file. Save and exit.
 
@@ -88,7 +88,7 @@ d. Tag and Push the image
 
 
 
-![Screenshot 2025-04-15 162823](https://github.com/user-attachments/assets/a15cb5cd-fdab-4459-be68-681dfb9fe1ce)
+
 
 ![image](https://github.com/user-attachments/assets/104846fd-39a0-433f-a558-222c6b1bba2e)
 
