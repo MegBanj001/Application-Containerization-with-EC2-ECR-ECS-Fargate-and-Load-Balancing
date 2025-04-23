@@ -37,7 +37,54 @@ ECS allows you 3 options to run your container-based application.
 
 **On-prem VM** — You run your containers on on-prem VMs.
 
+# Prerequisities
+
+- An app ready to containerize
+
+- AWS IAM permissions to access ECR, ECS, Fargate and ALB.
+
+-AWS CLI configured (AWS Configure)
+
+
 # Step-by-step guide to containerizing an application with EC2, ECR, ECS, Fargate and Load Balancer
+
+# STEP 1: Create an EC2 instance
+
+a. Create an instance either through the console or CLI.
+b. Connect to the instance.
+
+# STEP 2: Install Docker
+a. Use `curl -fsSL https://get.docker.com -o get-docker.sh`
+`yum install docker -y`
+
+b. Start the docker daemon using `systemctl start docker`
+
+c. Confirm docker daemon is runnng using `systemctl status docker`
+
+d. Create a Dockerfile
+![alt text](image.png)
+
+e. Type vi Index.html to create your html file. Save and exit.
+
+f. Build the Docker image
+`docker build -t citycare_app .`
+
+g. containerize the docker image using `docker run -d -p 80:80 --name dawn citycare_app`
+
+# STEP 3: Push image to Amazon ECR
+a. Configure the AWS credntials using aws configure.
+
+b. Create an ECR repository using `aws ecr create-repository --repository-name citycare_app`
+
+c. Authenticate Docker to ECR using ` aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 241533137938.dkr.ecr.ca-central-1.amazonaws.com`
+
+d. Tag and Push the image
+`docker tag citycare_app:latest 241533137938.dkr.ecr.ca-central-1.amazonaws.com/citycare_app:latest
+`
+`docker push 241533137938.dkr.ecr.ca-central-1.amazonaws.com/citycare_app:latest`
+
+# STEP 4: Set up ECS Cluster with Fargate
+
 
 
 
