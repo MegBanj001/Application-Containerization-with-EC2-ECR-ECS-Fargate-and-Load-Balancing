@@ -43,7 +43,7 @@ ECS allows you 3 options to run your container-based application.
 
 - AWS IAM permissions to access ECR, ECS, Fargate and ALB.
 
--AWS CLI configured (AWS Configure)
+- AWS CLI configured (AWS Configure)
 
 
 # Step-by-step guide to containerizing an application with EC2, ECR, ECS, Fargate and Load Balancer
