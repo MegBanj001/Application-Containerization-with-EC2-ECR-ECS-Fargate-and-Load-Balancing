@@ -83,7 +83,54 @@ d. Tag and Push the image
 `
 `docker push 241533137938.dkr.ecr.ca-central-1.amazonaws.com/citycare_app:latest`
 
-# STEP 4: Set up ECS Cluster with Fargate
+# STEP 4: Set up Load Balancer (ALB)
+1. Create an Application load balancer 
+
+a. Give the ALB a name.
+
+b. Select the VPC, Security Group and subnets
+
+2. Create a target group
+
+a. Give a name to the target group.
+
+b. Protocol = HTTP, Port = 80
+
+c. VPC: Choose your VPC
+
+3. Create a listener rule
+
+a. Default action = target group arn
+
+b. Protocol = HTTP, Port = 80
+
+# Note that the deployment for load balancer and service takes some time to be fully set up.
+
+# STEP 5: Set up ECS cluster with Fargate
+
+a. Create Cluster
+
+b. After successfully creating the Cluster, go ahead and create Service.
+
+c.Choose the Task definition family and proceed to give the Service a name. 
+
+d. Choose "Use load balancing". Use existing load balancer and existing listener.
+
+e. Create a new target group
+
+f. Create the Service. 
+
+g. Define Task Definition 
+
+h. Under Container-1, give the container and name and paste the URL of the image.
+
+# STEP 6: Deploy Service to ECS with load Balancer
+
+a. Give the Service a name.
+
+b. 
+
+
 
 
 
@@ -107,3 +154,5 @@ d. Tag and Push the image
 
 # Result
 ![image](https://github.com/user-attachments/assets/aea01744-5f4c-42a9-823f-f85d39bdecd7)
+
+
