@@ -51,6 +51,7 @@ ECS allows you 3 options to run your container-based application.
 # STEP 1: Create an EC2 instance
 
 a. Create an instance either through the console or CLI.
+
 b. Connect to the instance.
 
 # STEP 2: Install Docker
@@ -71,7 +72,7 @@ e. Type vi Index.html to create your html file. Save and exit.
 f. Build the Docker image
 `docker build -t citycare_app .`
 
-g. containerize the docker image using `docker run -d -p 80:80 --name dawn citycare_app`
+g. Containerize the docker image using `docker run -d -p 80:80 --name dawn citycare_app`
 
 # STEP 3: Push image to Amazon ECR
 a. Configure the AWS credntials using aws configure.
