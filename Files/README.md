@@ -154,6 +154,6 @@ For the project, I used port 80.
 
 
 # Result
-![alt text](<Screenshot 2025-04-23 203259.png>)
+![alt text](image.png)
 
 
