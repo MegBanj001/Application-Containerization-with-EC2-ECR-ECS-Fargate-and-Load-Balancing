@@ -115,7 +115,7 @@ a. Create Cluster
 
 b. After successfully creating the Cluster, go ahead and create Service.
 
-c.Choose the Task definition family and proceed to give the Service a name. 
+c. Choose the Task definition family and proceed to give the Service a name. 
 
 d. Choose "Use load balancing". Use existing load balancer and existing listener.
 
@@ -131,18 +131,14 @@ h. Under Container-1, give the container and name and paste the URL of the image
 
 a. Give the Service a name.
 
-b. 
+b. Choose the task definition
 
+c. Desired count should be 2
 
+d. For Network configuration, choose your VPC, subnets and security group. Enable assign public IP.
 
-
-
-
-
-
-
-
-
+e. Under the load balancer, choose your target group, give a container name and container port. 
+For the project, I used port 80.
 
 
 # Summary
@@ -152,10 +148,12 @@ b.
 
 - Deployed it on ECS Fargate.
 
-- Exposed it via a Load Balancer
+- Exposed it via a Load Balancer.
+
+- Was able to access my app publicly.
 
 
 # Result
-![image](https://github.com/user-attachments/assets/aea01744-5f4c-42a9-823f-f85d39bdecd7)
+![alt text](<Screenshot 2025-04-23 203259.png>)
 
 
