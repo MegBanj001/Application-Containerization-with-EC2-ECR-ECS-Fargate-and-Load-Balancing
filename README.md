@@ -154,5 +154,6 @@ For the project, I used port 80.
 
 
 # Result
-![alt text](image.png)
+![Screenshot 2025-04-23 203259](https://github.com/user-attachments/assets/a32b0777-eea2-4d83-88a3-7c9df0f059fb)
+
 
